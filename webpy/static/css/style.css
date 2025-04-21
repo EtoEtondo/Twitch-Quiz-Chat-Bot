@@ -1,0 +1,12 @@
+body { padding-top: 250px; }
+
+.points {
+  width: 800px;
+  display: block;
+  margin: 0 auto;
+  left: 50%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}

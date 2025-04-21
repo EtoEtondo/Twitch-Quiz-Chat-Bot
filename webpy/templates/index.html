@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Twitch-Quiz</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.css') }}">
+  </head>
+  
+  <body>
+      
+    <div class="container">
+        
+      <div id="start_screen" class="jumbotron quiz_start" >
+        <h1>Quiz with Twitch-Chat</h1>
+        <p>Start if the bot is running</p>
+        <p><button class="start btn btn-primary btn-lg" role="button">Start</button></p>
+      </div>
+      
+      <div id="question" class="jumbotron" hidden>
+        <h4>Question <span id="qno"></span></h4>
+        <h2 id="question_text">...?</h2>
+        <div class="row">
+          <div class="col-md-6"><p><button id="answer_a_btn" class="answer btn btn-default btn-lg btn-block" role="button">A: <span id="answer_a">!</span></button></p></div>
+          <div class="col-md-6"><p><button id="answer_c_btn" class="answer btn btn-default btn-lg btn-block" role="button">C: <span id="answer_c">.</span></button></p></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"><p><button id="answer_b_btn" class="answer btn btn-default btn-lg btn-block" role="button">B: <span id="answer_b">?</span></button></p></div>
+          <div class="col-md-6"><p><button id="answer_d_btn" class="answer btn btn-default btn-lg btn-block" role="button">D: <span id="answer_d">;</span></button></p></div>
+        </div>
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2">
+            <p><button id="answer_commit_btn" class="btn btn-primary btn-lg btn-block" role="button"><span id="commit_text">Answers</span></button></p>
+            <p><button id="continue_btn" class="btn btn-primary btn-lg btn-block" role="button" hidden><span id="commit_text" >Continue</span></button></p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="over" class="jumbotron quiz_end" hidden>
+        <h2>Quiz ended! Who got the most points?</h2>
+        <p><button class="restart btn btn-primary btn-lg" role="button">Again</button></p>
+      </div>
+	  
+      <div class="points">
+        <div class="pt">
+			<div class="col-md-3"><center><p>Team 1</p><p id="point_text_1">0</p></center><p><button id="up_1_btn" class="point btn btn-default btn-block" role="button">+</button></p><p><button id="down_1_btn" class="point btn btn-default btn-block" role="button">-</button></p></div>
+			<div class="col-md-3"><center><p>Team 2</p><p id="point_text_2">0</p></center><p><button id="up_2_btn" class="point btn btn-default btn-block" role="button">+</button></p><p><button id="down_2_btn" class="point btn btn-default btn-block" role="button">-</button></p></div>
+		</div>
+      </div>
+        
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../static/js/bootstrap.min.js"></script>
+    
+    <script src="../static/js/quiz.js"></script>
+    <script src="../static/js/script.js"></script>
+    
+  </body>
+</html>
